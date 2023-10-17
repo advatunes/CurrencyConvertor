@@ -1,0 +1,41 @@
+.currency__wrap {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 10px 0 10px;
+}
+
+/* .currency__form {
+    width: 200px;
+} */
+
+.currency__input {
+  box-sizing: border-box;
+  /* border: none;
+  border-bottom: 1px solid #e8e8e8; */
+  width: 100%;
+  margin: 10px 0;
+}
+
+.currency__input:focus {
+  outline: none;
+}
+
+/* .currencyInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 135px;
+  } */
+
+.currency__button {
+  font-size: 13px;
+  line-height: 16px;
+  /* border: none; */
+  background-color: inherit;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.currency__button:hover {
+  opacity: 0.6;
+}

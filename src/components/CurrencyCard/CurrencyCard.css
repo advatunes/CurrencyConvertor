@@ -1,0 +1,21 @@
+.currencyCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: bisque;
+    padding: 3px;
+    font-size: 12px;
+    max-width: 80px;
+    height: 80px;
+}
+
+.currencyCard__code {
+    margin: 0;
+}
+
+.currencyCard__name {
+    margin: 0;
+    font-size: 10px;
+}
