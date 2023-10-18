@@ -1,5 +1,6 @@
 const endpointRates = 'live';
 const endpointList = 'list';
+const endpointConvert = 'convert';
 const access_key = 'ff0a96de8f61e115a2ce609ba794bd46';
 const baseUrl = 'http://apilayer.net/api/';
 
@@ -21,8 +22,17 @@ class CurrencyApi {
     return fetch(url, options).then(this._checkResponse);
   }
 
-  getCurrencyRates() {
+  getCurrencyRatesAll() {
     return this._request(`${this.baseUrl}` + `${endpointRates}` + '?access_key=' + `${access_key}`, {
+      method: 'GET',
+    });
+  }
+
+  getCurrencyRates(from, to, amount) {
+    console.log(`${this.baseUrl}` + `${endpointConvert}` + '?access_key=' + `${access_key}`+'&from=' + `${from}` + '&to=' + `${to}` + '&amount=' + `${amount}`);
+
+
+    return this._request(`${this.baseUrl}` + `${endpointConvert}` + '?access_key=' + `${access_key}`+'&from=' + `${from}` + '&to=' + `${to}` + '&amount=' + `${amount}`, {
       method: 'GET',
     });
   }

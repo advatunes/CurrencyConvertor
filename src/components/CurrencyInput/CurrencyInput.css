@@ -39,3 +39,8 @@
 .currency__button:hover {
   opacity: 0.6;
 }
+
+.currency__error {
+  color: red;
+  font-size: 12px;
+}

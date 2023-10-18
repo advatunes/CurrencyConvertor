@@ -31,7 +31,7 @@ function App() {
   // useEffect(() => {
   //   currencyApi.getCurrencyList()
   //     .then((list) => {
-
+  //       console.log(list);
   //       setCurrencyList(list.currencies);
   //       localStorage.setItem('currencyList', JSON.stringify(list));
 
@@ -41,16 +41,14 @@ function App() {
   //     });
   // }, []);
 
-  console.log(currencyList.USD);
-
   return (
     <div className='root'>
       <main className='content'>
         <h1>Currency Converter</h1>
 
         <div>Курс доллара = {!loading ? usdRub + ' руб.' : 'Загрузка'}</div>
-        <CurrencyInput />
-        <CurrencyList currencyList={currencyList} />
+        <CurrencyInput currencyList={currencyList}/>
+        {/* <CurrencyList currencyList={currencyList} /> */}
       </main>
     </div>
   );
