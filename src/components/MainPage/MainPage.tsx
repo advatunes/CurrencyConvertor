@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
-
 import { currencyApi } from '../../utils/Api';
 import CurrencyInput from '../CurrencyInput/CurrencyInput';
-import CurrencyList from '../AllCurrencyList/AllCurrencyList';
-import MainPage from '../MainPage/MainPage'
-
+import AllCurrencyList from '../AllCurrencyList/AllCurrencyList';
+import { Routes, Route, BrowserRouter, NavLink, useLocation } from 'react-router-dom';
 import { CURRENCY_LIST } from '../../utils/constants';
 
-function App() {
+interface CurrencyListProps {
+  currencyList: { [currencyCode: string]: string };
+}
+
+function MainPage({ currencyList }: CurrencyListProps) {
   const [usdRub, setUsdRub] = useState(97);
-  const [currencyList, setCurrencyList] = useState(CURRENCY_LIST);
+  // const [currencyList, setCurrencyList] = useState(CURRENCY_LIST);
 
   const [loading, setLoading] = useState(false);
 
+  const location = useLocation();
   // useEffect(() => {
   //   currencyApi.getCurrencyRates("USDRUB")
   //     .then((item) => {
@@ -44,14 +46,16 @@ function App() {
   // }, []);
 
   return (
-    <div className='root'>
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<MainPage currencyList={currencyList} />} />
-          </Routes>
-        </BrowserRouter>
-    </div>
+    <main className='content'>
+      <h1 className='title'>Валютный калькулятор</h1>
+      {/* <div>Курс доллара = {!loading ? usdRub + ' руб.' : 'Загрузка'}</div> */}
+      <CurrencyInput currencyList={currencyList} />
+      {/* <NavLink to='/all-currencies' className='all__currencies'>
+        Курсы валют
+      </NavLink> */}
+      <AllCurrencyList currencyList={currencyList} />
+    </main>
   );
 }
 
-export default App;
+export default MainPage;

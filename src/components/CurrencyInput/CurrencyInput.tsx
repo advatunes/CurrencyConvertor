@@ -12,12 +12,15 @@ function CurrencyInput({ currencyList }: CurrencyListProps) {
   const [toCurrency, setToCurrency] = useState('');
   const [result, setResult] = useState('');
 
+
   const [inputError, setInputError] = useState('');
   const [loading, setLoading] = useState(false);
 
   const currencyArray = Object.entries(currencyList);
 
+
   function convertCurrency() {
+    setLoading(true);
     currencyApi
       .getCurrencyRates(fromCurrency, toCurrency, amountToConvert)
       .then((item) => {
@@ -26,12 +29,17 @@ function CurrencyInput({ currencyList }: CurrencyListProps) {
       })
       .catch((error) => {
         setLoading(false);
+        console.log(error);
       });
   }
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
+    if (e.target.value == '') {
+      setInputError('');
+    }
   };
+
   const handleConvert = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setInputError('');
@@ -43,9 +51,9 @@ function CurrencyInput({ currencyList }: CurrencyListProps) {
         return currencyArray.some((currency) => currency[0] === word);
       });
 
-    const match = value.match(/\d+/);
+    const match = value.match(/-?\d+/g);
 
-    if (result.length === 2 && match) {
+    if (result.length === 2 && match && +match > 0) {
       setAmountToConvert(+match);
       setFromCurrency(result[0]);
       setToCurrency(result[1]);
@@ -59,7 +67,7 @@ function CurrencyInput({ currencyList }: CurrencyListProps) {
   };
 
   useEffect(() => {
-    if (fromCurrency && toCurrency && amountToConvert !== 0) {
+       if (fromCurrency && toCurrency && amountToConvert !== 0) {
       convertCurrency();
     }
   }, [fromCurrency, toCurrency, amountToConvert]);

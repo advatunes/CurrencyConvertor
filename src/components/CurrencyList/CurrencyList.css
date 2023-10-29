@@ -1,7 +1,0 @@
-.curencyList {
-    box-sizing: border-box;
-    column-gap: 5px;
-    display: grid;
-    grid-template-columns: repeat(8,minmax(20px,auto));
-    row-gap: 5px;
-}
