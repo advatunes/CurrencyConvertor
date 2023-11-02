@@ -1,0 +1,50 @@
+.currencyCard {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.currencyCard:hover {
+  background-color: #e0e0e0;
+}
+
+.currencyCard__code {
+  margin: 0;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: right;
+}
+
+.currencyCard__name {
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.currencyCard__value {
+  margin: 5px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.currencyCard_selected {
+  background-color: #0074e4;
+  color: #fff;
+  border: none;
+  cursor: default;
+  transition: background-color 0.3s;
+}
+
+.currencyCard_selected:hover {
+  background-color: #0074e4;
+}
