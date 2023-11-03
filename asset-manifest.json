@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/CurrencyConvertor/static/css/main.598cf915.css",
+    "main.js": "/CurrencyConvertor/static/js/main.da5d39ad.js",
+    "static/media/Inter-Medium.woff?v=3.19": "/CurrencyConvertor/static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
+    "static/media/Inter-Black.woff?v=3.19": "/CurrencyConvertor/static/media/Inter-Black.c6938660eec019fefd68.woff",
+    "static/media/Inter-Regular.woff?v=3.19": "/CurrencyConvertor/static/media/Inter-Regular.8c206db99195777c6769.woff",
+    "static/media/Inter-Medium.woff2?v=3.19": "/CurrencyConvertor/static/media/Inter-Medium.293fd13dbca5a3e450ef.woff2",
+    "static/media/Inter-Black.woff2?v=3.19": "/CurrencyConvertor/static/media/Inter-Black.15ca31c0a2a68f76d2d1.woff2",
+    "static/media/Inter-Regular.woff2?v=3.19": "/CurrencyConvertor/static/media/Inter-Regular.c8ba52b05a9ef10f4758.woff2",
+    "index.html": "/CurrencyConvertor/index.html",
+    "main.598cf915.css.map": "/CurrencyConvertor/static/css/main.598cf915.css.map",
+    "main.da5d39ad.js.map": "/CurrencyConvertor/static/js/main.da5d39ad.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.598cf915.css",
+    "static/js/main.da5d39ad.js"
+  ]
+}
